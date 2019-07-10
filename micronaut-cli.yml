@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: playground
+---
+testFramework: spock
+sourceLanguage: java
