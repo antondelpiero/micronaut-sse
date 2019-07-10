@@ -25,12 +25,12 @@ public class AuthorService {
     }
 
     public void publish(Author author) {
-        var subject = subjectMap.get("1");
+        Subject<Author> subject = subjectMap.get("1");
         subject.onNext(author);
     }
 
     public Flowable<Author> getAuthors() {
-        var subject = subjectMap.get("1");
+        Subject<Author> subject = subjectMap.get("1");
         return subject.hide()
                       .toFlowable(BackpressureStrategy.BUFFER);
     }
